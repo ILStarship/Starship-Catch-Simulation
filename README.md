@@ -9,6 +9,7 @@ Land Starship in the Chopsticks!
 - Left & right arrows move ship left and right (pressing right shift keys increases speed)
 - Space bar fires engine (right shift key provides higher thrust)
 
+# GUI Description
 ![Game GUI](https://github.com/ILStarship/Starship-Catch-Py/blob/Pygame/README%20IMAGE.png)
 - Blue bar shows the altitude of Starship.
 - Purple bar shows the remaining propellant.
