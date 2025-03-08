@@ -6,7 +6,7 @@ import configparser
 
 # --- Config Parser Setup ---
 Config = configparser.ConfigParser()
-Config.read("Starship Catch Py.INI")
+Config.read("Starship Catch Py CONFIG.INI")
 
 # --- Pygame Setup ---
 pygame.init() # Initialize Pygame modules
