@@ -287,30 +287,6 @@ try:
             else:
                 # Mouse isn't overing over button
                 return False
-    
-    class AudioPlayer:
-        def  __init__(self):
-            self.current_audio = ""
-
-        def play_audio(self, file_name):
-            """Plays audio using pygame.mixer.music."""
-            try:
-                pygame.mixer.music.load(file_name)
-                pygame.mixer.music.play()
-
-                self.current_audio = file_name
-            except FileNotFoundError as e:
-                print(f"Audio file not found! {e}")
-
-        def stop_audio():
-            """Stops audio."""
-            pygame.mixer.stop()
-        
-        def get_busy(self):
-            """Returns whether pygame.mixer.music is busy."""
-            return pygame.mixer.music.get_busy()
-    
-    audio_player = AudioPlayer()
 
     class ScreenState(Enum):
         """Stores which screen program should be showing"""
