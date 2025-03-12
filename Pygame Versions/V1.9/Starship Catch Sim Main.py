@@ -479,11 +479,11 @@ while running:
                 # Belly flop hasn't been executed
                 if keys[pygame.K_LEFT]:
                     # Left arrow pressed
-                    starship.setpos(starship.x-0.5, starship.y) # Move starship to the left
+                    starship.setpos(starship.x-0.75, starship.y) # Move starship to the left
                     starship.set_rotation(-65)
                 elif keys[pygame.K_RIGHT]:
                     # Right arrow pressed
-                    starship.setpos(starship.x+0.5, starship.y) # Move starship to the right
+                    starship.setpos(starship.x+0.75, starship.y) # Move starship to the right
                     starship.set_rotation(-85)
                 else:
                     # Neither left nor right arrow pressed
@@ -506,25 +506,25 @@ while running:
                 if keys[pygame.K_SPACE]:
                     # Belly flop executed -> fire engines
                     starship.fire_engine(engine_thrust_max if keys[pygame.K_LSHIFT] else engine_thrust_min, max_propellant_usage if keys[pygame.K_LSHIFT] else min_propellant_usage)
-                
-                    # Check for left and right arrow presses. Put here so that ship only moves left or right when firing engines.
-                    if keys[pygame.K_LEFT]:
-                        # Left arrow pressed and firing engine
-                        # Moves faster if right shift key pressed
-                        starship.set_rotation(10 if keys[pygame.K_RSHIFT] else 5)
-                        starship.setpos(starship.x-(1 if keys[pygame.K_RSHIFT] else 0.5), starship.y)
-                    elif keys[pygame.K_RIGHT]:
-                        # Right arrow pressed and firing engine
-                        # Moves faster if right shift key pressed
-                        starship.set_rotation(-10 if keys[pygame.K_RSHIFT] else -5)
-                        starship.setpos(starship.x+(1 if keys[pygame.K_RSHIFT] else 0.5), starship.y)
-                    else:
-                        # Neither left nor right arrow pressed
-                        starship.set_rotation(0) # Reset rotation
 
                 else:
                     # Space bar not pressed
                     starship.stop_firing_engine()
+
+                # Check for left and right arrow presses. Only shifts when engines are firing
+                if keys[pygame.K_LEFT] and starship.firing:
+                    # Left arrow pressed and firing engine
+                    # Moves faster if right shift key pressed
+                    starship.set_rotation(10 if keys[pygame.K_RSHIFT] else 5)
+                    starship.setpos(starship.x-(1 if keys[pygame.K_RSHIFT] else 0.5), starship.y)
+                elif keys[pygame.K_RIGHT] and starship.firing:
+                    # Right arrow pressed and firing engine
+                    # Moves faster if right shift key pressed
+                    starship.set_rotation(-10 if keys[pygame.K_RSHIFT] else -5)
+                    starship.setpos(starship.x+(1 if keys[pygame.K_RSHIFT] else 0.5), starship.y)
+                else:
+                    # Neither left nor right arrow pressed
+                    starship.set_rotation(0) # Reset rotation
             
             if starship.landing_flip_executed:
                 # Belly flop has been done
