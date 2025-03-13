@@ -246,8 +246,9 @@ try:
             screen.blit(self.img, (self.x, alt+tower_base_coor))
 
     class Banner:
-        def __init__(self, size: int, color: tuple):
-            self.font = pygame.font.SysFont(None, size)
+        def __init__(self, size: int, color: tuple, font: str | None = None):
+            #self.font = pygame.font.SysFont(None, size)
+            self.font = pygame.font.SysFont(None, size) if font == None else pygame.font.Font(font, size)
             self.color = color
 
         def render_text(self, text, x, y):
@@ -343,7 +344,7 @@ try:
 
     fuel_bar = FuelBar(150, 9, 100, 30)
 
-    home_banner = Banner(70, (0,0,0))
+    home_banner = Banner(32, (0,0,0), "spacex/Spacex.ttf")
 
     frequency_banner = Banner(20, (128, 128, 128)) # Frequency of frames in game session
     banner = Banner(50, (0,0,0)) # Header banner after flight ends
@@ -404,7 +405,7 @@ while running:
         if screen_state == ScreenState.LEVELSCREEN:
             #screen.fill((bg_color["R"], bg_color["G"], bg_color["B"]))
             screen.blit(home_img, (-200, 0))
-            home_banner.render_text("STARSHIP CATCH SIMULATOR", screen_x/12-12, screen_y/8)
+            home_banner.render_text("STARSHIP CATCH SIMULATOR", screen_x/12-55, screen_y/8)
 
             easy_button.render_button(screen, pygame)
             medium_button.render_button(screen, pygame)
