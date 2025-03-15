@@ -35,17 +35,3 @@
 [HEADER3]   After Landing Flip
 
 [IMAGE]Starship_Catch_Sim_GUI_LANDING_FLIP.png
-
-# Starship Catch Sim V2.0
-## Adds:
-1. This version adds a **scrollable** instruction screen!
-
->[!NOTE]
->Text in instruction screen could be changed in [Instructions.txt](url)
->`[HEADER1]` is equivalent to `# ` in MD.
->`[HEADER2]` is equivalent to `## ` in MD.
->`[HEADER3]` is equivalent to `### ` in MD.
->`[HEADER4]` is equivalent to `### ` in MD.
->`[IMAGE]` is used to link to an image. __(Image must be in same folder or path to image must be after the folder)__
->`[BODY]` is body text.
->`[COMMENT]` is used to tell parser that the line is a comment and shouldn't be written onto screen.
