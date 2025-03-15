@@ -1,0 +1,51 @@
+[HEADER1]                          Starship Catch Sim
+
+[HEADER2]What am I Trying to do?
+[BODY]  You are trying to land Starship between the arms of the catch tower, ie Chopsticks.
+
+[IMAGE]Starship_Caught.png
+
+[BODY]  Don't land too hard!
+
+[IMAGE]Starship_Crash.png
+
+[HEADER2]How do I Control Starship?
+[HEADER3]   Before Landing Flip:
+[BODY]1. The left and right arrows moves the ship left and right respectively.
+[BODY]2. The up and down arrow makes the ship descend slower and faster respectively.
+[BODY]   (There is a limit on how fast and slow depending on the difficulty level)
+[BODY]3. Pressing the space key makes ship perform landing flip.
+[HEADER3]   After Landing Flip:
+[BODY]1. The left and right arrows moves the ship left and right respectively.
+[BODY]   (Pressing the right shift key increases the speed of moving left or right)
+[BODY]2. Pressing the space key fires engine at a rate that results in no change of speed.
+[BODY]3. Pressing the space and the left shift key fires engine at a rate that results in deceleration.
+
+[HEADER2]Keys
+[BODY]  1. After flight terminates, press the key [Q] to return to level screen.
+
+[HEADER2]GUI Description
+[HEADER3]   Before Landing Flip/During Belly Flop
+
+[IMAGE]Starship_Catch_Sim_GUI_BELLY_FLOP.png
+
+[BODY]If the colour of Refresh-Rate is red for too long, the program is running too slow for maximum
+[BODY]enjoyment.
+
+[HEADER3]   After Landing Flip
+
+[IMAGE]Starship_Catch_Sim_GUI_LANDING_FLIP.png
+
+# Starship Catch Sim V2.0
+## Adds:
+1. This version adds a **scrollable** instruction screen!
+
+>[!NOTE]
+>Text in instruction screen could be changed in [Instructions.txt](url)
+>`[HEADER1]` is equivalent to `# ` in MD.
+>`[HEADER2]` is equivalent to `## ` in MD.
+>`[HEADER3]` is equivalent to `### ` in MD.
+>`[HEADER4]` is equivalent to `### ` in MD.
+>`[IMAGE]` is used to link to an image. __(Image must be in same folder or path to image must be after the folder)__
+>`[BODY]` is body text.
+>`[COMMENT]` is used to tell parser that the line is a comment and shouldn't be written onto screen.
