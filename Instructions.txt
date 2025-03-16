@@ -35,3 +35,6 @@
 [HEADER3]   After Landing Flip
 
 [IMAGE]Starship_Catch_Sim_GUI_LANDING_FLIP.png
+
+[HEADER2]Scoring System
+[BODY]  The scoring system incentivizes using the least propellant and quickest time.
