@@ -124,7 +124,7 @@ except Exception as e:
 if running:
     # Only continue setup if getting config values were successful
 
-    MarkUp_file_parser = PseudoMarkUp_FileParser.PseudoMarkUpParser(-2500, 0)
+    MarkUp_file_parser = PseudoMarkUp_FileParser.PseudoMarkUpParser(-2600, 0)
     MarkUp_file_parser.convert_file("Instructions.txt")
     MarkUp_file_parser.print_attributes()
 
