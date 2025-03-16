@@ -1,0 +1,23 @@
+# Starship Catch Sim V2.0
+## Adds:
+1. This version adds a **scrollable** instruction screen!
+
+>[!NOTE]
+>Text in instruction screen could be changed in [Instructions.txt](url)
+>`[HEADER1]` is equivalent to `# ` in MD.
+>`[HEADER2]` is equivalent to `## ` in MD.
+>`[HEADER3]` is equivalent to `### ` in MD.
+>`[HEADER4]` is equivalent to `### ` in MD.
+>`[IMAGE]` is used to link to an image. __(Image must be in same folder or path to image must be after the folder)__
+>`[BODY]` is body text.
+>`[COMMENT]` is used to tell parser that the line is a comment and shouldn't be written onto screen.
+
+# Starship Catch Sim V2.1
+## Adds:
+1. When importing configuration data is unsuccessful, an alert box will pop up showing the error. After clicking confirm, the program would close automatically.
+## Changes:
+1. Program doesn't retry importing configuration values if import is unsuccessful.
+
+# Starship Catch Sim V2.2
+## Adds:
+1. A scoring system that functions by adding `time taken` with `amount of propellant used`. The smaller the result, the better. Values are persistant and are stored inside `Best.json`.
