@@ -1,7 +1,7 @@
 Land Starship in the Chopsticks!
 
 # Location of Files
-Code, images, audio, and other files of the game must be placed in the same folder. An example of how to place the files could be found in the directory )
+Code, images, audio, and other files of the game must be placed in the same folder. An example of how to place the files could be found in the directory ![File Location Example](https://github.com/ILStarship/Starship-Catch-Simulation/tree/Release---V2.2.1/File%20Location%20Example))
 
 # Instructions (@DEPRECATED From V2.0 onwards, intructions and other information about the game could be found by clicking the button on the level screen `How to Play?`)
 ## Before belly-flop
