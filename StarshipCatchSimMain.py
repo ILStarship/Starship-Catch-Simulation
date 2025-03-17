@@ -363,7 +363,7 @@ if running:
     
     info_button = Button("How to Play?", screen_x-150, 10, 135, 30, (0,0,0), (128, 128, 128))
 
-    delete_best_button = Button("Delete Best Score", 100, 10, 200, 30, (255, 0,0), (128, 128, 128))
+    delete_best_button = Button("Reset Best Score", 100, 10, 200, 30, (255, 0,0), (128, 128, 128))
     get_best_button = Button("What is my Best score?", 100, 50, 250, 30, (0,0,0), (128, 128, 128))
 
     # --- Infoscreen Buttons ---
@@ -441,7 +441,7 @@ while running:
         
         if delete_best_button.mouse_click():
             # User wants to delete stats
-            delete_stats = messagebox.askokcancel(title="WARNING", message="Are you sure you want to delet your stats?", icon=messagebox.WARNING)
+            delete_stats = messagebox.askokcancel(title="WARNING", message="Are you sure you want to delet your best score?", icon=messagebox.WARNING)
             if delete_stats:
                 # Confirmed
                 update_best_json(None, None)
@@ -725,7 +725,7 @@ while running:
             propellant_banner.color = (0, 0, 0)
             descent_rate_banner.color = (0, 0, 0)
 
-        altitude_banner.render_text("ALTITUDE", screen_x-105, screen_y-35)
+        altitude_banner.render_text(f"ALTITUDE: {alt/100:.0f} KM", screen_x-165, screen_y-35)
 
         propellant_banner.render_text("PROPELLANT", 10, 40)
     
