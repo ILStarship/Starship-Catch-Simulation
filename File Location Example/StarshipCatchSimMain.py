@@ -343,7 +343,7 @@ if running:
 
     fuel_bar = FuelBar(150, 39, 100, 30)
 
-    home_banner = Banner(32, (0,0,0), "spacex/Spacex.ttf")
+    home_banner = Banner(32, (0,0,0), "Spacex.ttf")
 
     frequency_banner = Banner(20, (128, 128, 128)) # Frequency of frames in game session
     banner = Banner(50, (0,0,0)) # Header banner after flight ends
