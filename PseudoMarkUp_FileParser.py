@@ -87,19 +87,21 @@ class PseudoMarkUpParser():
                 # Write text content, type, size, and y origin into dictionary
                 element_type = self.get_element_type(line)
                 if element_type != ElementType.COMMENT:
+                    # Line isn't a comment
                     self.text_attributes.append({"Text": self.remove_type(line).rstrip(), "Y Origin": element_y_origin, 
                                                 "Type": element_type, "Size": TextTypeSize[element_type] if element_type != ElementType.IMAGE else None})
 
                     if self.text_attributes[len(self.text_attributes)-1]["Type"] != ElementType.IMAGE:
                         # Line isn't an image
-                        element_y_origin += TextTypeSize[element_type] + spacing # Update X-origin of next element
+                        element_y_origin += TextTypeSize[element_type] + spacing # Update Y-origin of next element
                     else:
                         # Line is an image
-                        # Update X origin of next element by the height of the image
+                        # Update Y origin of next element by the height of the image
                         try:
                             element_y_origin += pygame.image.load(self.text_attributes[len(self.text_attributes)-1]["Text"]).get_height() + 10
                         except FileNotFoundError:
                             print("Displaying Image Failed! File Counldn't be found!")
+                            element_y_origin += 35
     
     def display_content(self, screen: pygame.display.set_mode, scroll_offset: int=0):
         """Displays content from self.text_attributes. Includes scrolling to move text up and down"""
@@ -125,6 +127,9 @@ class PseudoMarkUpParser():
                     screen.blit(img, (10, element["Y Origin"]+self.total_scroll_offset))
                 except FileNotFoundError:
                     print("Displaying Image Failed! File Counldn't be found!")
+                    font = pygame.font.SysFont(None, 25)
+                    txt_img = font.render("[?UNABLE TO DISPLAY IMAGE]", True, (255,0,0))
+                    screen.blit(txt_img, (10, element["Y Origin"]+self.total_scroll_offset))
     
     def print_attributes(self):
         """Display attributes of self.text_attributes"""

@@ -21,3 +21,8 @@
 # Starship Catch Sim V2.2
 ## Adds:
 1. A scoring system that functions by adding `time taken` with `amount of propellant used`. The smaller the result, the better. Values are persistant and are stored inside `Best.json`.
+
+# Starship Catch Sim V2.3
+## Changes:
+1. In the instruction screen, when an image can't be found, the game screen would show `[?unable to display image]`.
+2. Dimension of `best score` buttons have been adjusted

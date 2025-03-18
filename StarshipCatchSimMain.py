@@ -238,7 +238,12 @@ if running:
                 self.font = pygame.font.SysFont(None, size)
             elif ".ttf" in font:
                 # Use a font file
-                self.font = pygame.font.Font(font, size)
+                try:
+                    self.font = pygame.font.Font(font, size)
+                except FileNotFoundError as e:
+                    # Font not found in system
+                    print(f"[FILE NOT FOUND]: {e}")
+                    self.font = pygame.font.SysFont(None, size)
             else:
                 # Use a font from os
                 try:
@@ -363,8 +368,8 @@ if running:
     
     info_button = Button("How to Play?", screen_x-150, 10, 135, 30, (0,0,0), (128, 128, 128))
 
-    delete_best_button = Button("Reset Best Score", 100, 10, 200, 30, (255, 0,0), (128, 128, 128))
-    get_best_button = Button("What is my Best score?", 100, 50, 250, 30, (0,0,0), (128, 128, 128))
+    delete_best_button = Button("Reset Best Score", 100, 10, 175, 30, (255, 0,0), (128, 128, 128))
+    get_best_button = Button("What is my Best score?", 100, 50, 243, 30, (0,0,0), (128, 128, 128))
 
     # --- Infoscreen Buttons ---
     back_button = Button("<Back", 5, 5, 70, 30, (0,0,0), (128, 128, 128))
@@ -441,7 +446,7 @@ while running:
         
         if delete_best_button.mouse_click():
             # User wants to delete stats
-            delete_stats = messagebox.askokcancel(title="WARNING", message="Are you sure you want to delet your best score?", icon=messagebox.WARNING)
+            delete_stats = messagebox.askokcancel(title="WARNING", message="Are you sure you want to reset your best score?", icon=messagebox.WARNING)
             if delete_stats:
                 # Confirmed
                 update_best_json(None, None)
